@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: "BR-Firma-Light";
+    background-color: #fafafa;
+}
+
+@font-face {
+    font-family: "BR-Firma-Thin";
+    src: local("BR-Firma-Thin"), url(./fonts/BR_Firma_Thin.otf) format("opentype");
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+    font-family: "BR-Firma-Regular";
+    src: local("BR-Firma-Regular"), url(./fonts/BR_Firma_Regular.otf) format("opentype");
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                          'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+    font-family: "BR-Firma-Bold";
+    src: local("BR-Firma-Bold"), url(./fonts/BR_Firma_Bold.otf) format("opentype");
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                        'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+    font-family: "BR-Firma-SemiBold";
+    src: local("BR-Firma-SemiBold"), url(./fonts/BR_Firma_SemiBold.otf) format("opentype");
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                      'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+    font-family: "BR-Firma-light";
+    src: local("BR-Firma-light"), url(./fonts/BR_Firma_Light.otf) format("opentype");
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                    'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+    font-family: "BR-Firma-Elight";
+    src: local("BR-Firma-Elight"), url(./fonts/BR_Firma_Extra_Light.otf) format("opentype");
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                  'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+    font-family: "BR-Firma-Medium";
+    src: local("BR-Firma-Medium"), url(./fonts/BR_Firma_Medium.otf) format("opentype");
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                  'embedded-opentype', and 'svg' */
+}
