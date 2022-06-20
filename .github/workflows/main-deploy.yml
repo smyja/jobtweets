@@ -1,69 +1,31 @@
-name: Job tweets main deployment
+name: Deploy
 
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [main]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+on: [push]
 
 jobs:
-         
-  build-frontend-app:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          
-
-      - run: |
-
-          cd twittr
-          pwd
-          npm i
-          CI='' npm run build
-          cd ../twittr
-      - uses: actions/upload-artifact@v3.0.0
-        with:
-          name: build
-          path: build/
-          retention-days: 1
   build:
+
     runs-on: ubuntu-latest
-    needs: build-frontend-app
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v3
-        with:
-          name: build
-          path: build/        
+    - uses: actions/checkout@v1
 
-      # Runs a single command using the runners shell
+    - name: Copy repository contents via scp
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+      with:
+        source: "."
+        target: "/var/www/jobtweets.xyz"
 
-      - uses: master-atul/tar-action@v1.0.2
-        with:
-          command: c
-          files: |
-            ./build*
-            ./backend
-            ./captain-definition
-            ./Dockerfile
-          outPath: deploy.tar
-
-      - uses: premoweb/deploy-to-caprover@main
-        with:
-          server: '${{ secrets.CAPROVER_SERVER }}'
-          app: '${{ secrets.APP_NAME }}'
-          token: '${{ secrets.APP_TOKEN }}'
-          branch: 'main'
-          script: |
-            cd backend
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
-            uvicorn main:app --host=0.0.0.0 --port 80
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script: ls
