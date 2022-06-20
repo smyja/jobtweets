@@ -10,7 +10,8 @@ on:
 
 jobs:
   name: npm test:ci
-      run: npm run test:ci
+      run: | 
+        npm run test:ci
       env:
          CI: ""
          
