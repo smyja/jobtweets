@@ -9,11 +9,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  name: npm test:ci
-      run: | 
-        npm run test:ci
-      env:
-         CI: ""
          
   build-frontend-app:
     runs-on: ubuntu-latest
@@ -27,10 +22,11 @@ jobs:
           
 
       - run: |
+
           cd twittr
           pwd
           npm i
-          npm run build
+          CI='' npm run build
           cd ../twittr
       - uses: actions/upload-artifact@v3.0.0
         with:
