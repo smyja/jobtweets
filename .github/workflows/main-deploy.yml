@@ -9,7 +9,11 @@ on:
   workflow_dispatch:
 
 jobs:
-
+  name: npm test:ci
+      run: npm run test:ci
+      env:
+         CI: ""
+         
   build-frontend-app:
     runs-on: ubuntu-latest
 
@@ -22,8 +26,6 @@ jobs:
           
 
       - run: |
-          env:
-             CI: false
           cd twittr
           pwd
           npm i
