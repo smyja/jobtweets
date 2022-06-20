@@ -9,6 +9,25 @@ on:
   workflow_dispatch:
 
 jobs:
+  build-frontend-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - run: |
+          npm ci
+          npm run build
+      - uses: actions/upload-artifact@v3.0.0
+        with:
+          name: build
+          path: build/
+          retention-days: 1
   build:
     runs-on: ubuntu-latest
     steps:
