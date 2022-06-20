@@ -42,7 +42,16 @@ jobs:
 
       # Runs a single command using the runners shell
 
-
+      - uses: master-atul/tar-action@v1.0.2
+        with:
+          command: c
+          files: |
+            ./build*
+            ./backend
+            ./captain-definition
+            ./Dockerfile
+          outPath: deploy.tar
+          
         with:
           server: '${{ secrets.CAPROVER_SERVER }}'
           app: '${{ secrets.APP_NAME }}'
