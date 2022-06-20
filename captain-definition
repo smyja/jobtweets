@@ -1,0 +1,15 @@
+{
+    "schemaVersion": 2,
+    "dockerfileLines": [
+                          "FROM python:3.9",
+                          "USER root",
+                          "RUN mkdir -p /var/www/html/dist/",
+                          "COPY build/ /var/www/html/dist/",
+                          "RUN chown -R nobody.nobody /var/www/html",
+                          "ENV NODE_ENV production",
+                          "USER nobody",
+                          "ENV PORT 80",
+                          "EXPOSE 80",
+                          "CMD [\"uvicorn\",\"backend.main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]"
+                      ]
+   }
