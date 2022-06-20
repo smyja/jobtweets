@@ -22,13 +22,11 @@ jobs:
         source: "."
         target: "/var/www/jobtweets.xyz"
 
-    - name: Load private SSH key
-      uses: webfactory/ssh-agent@v0.5.3
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
       with:
-        ssh-private-key: ${{ secrets.SSHKEY }}
-
-    - name: Atomic Deploy
-      run: |
-        ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} << EOF
-          ls
-        EOF
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script: ls
