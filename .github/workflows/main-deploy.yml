@@ -23,7 +23,7 @@ jobs:
 
       - run: |
           env:
-          CI: false
+             CI: false
           cd twittr
           pwd
           npm i
