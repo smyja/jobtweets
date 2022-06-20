@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Git pull
-        uses: premoweb/deploy-to-caprover@main
+        
 
       # Runs a single command using the runners shell
 
@@ -52,6 +52,7 @@ jobs:
             ./Dockerfile
           outPath: deploy.tar
           
+      - uses: premoweb/deploy-to-caprover@main
         with:
           server: '${{ secrets.CAPROVER_SERVER }}'
           app: '${{ secrets.APP_NAME }}'
