@@ -129,10 +129,9 @@ const useStyles = createStyles((theme) => ({
 const Home = () => {
   const { classes, cx } = useStyles();
   const [joblist, setJoblist] = React.useState("");
-  const [jobs, setJobs] = React.useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const history = useNavigate();
+
   const selectForm = useRef(null);
   function handleSubmit(e) {
     if (e.keyCode === 13) {
@@ -141,7 +140,7 @@ const Home = () => {
       return;
     }
 
-    console.log(jobs);
+    // console.log(jobs);
     setLoading(true);
     const uu = {
       jobs: joblist,
@@ -161,10 +160,10 @@ const Home = () => {
         setLoading(false);
         setJoblist(data.data);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
         setLoading(false);
-        setError(err.message || err);
+        setError(err.message || error);
       });
   }
 
