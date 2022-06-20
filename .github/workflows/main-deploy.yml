@@ -24,7 +24,7 @@ jobs:
       - run: |
           cd twittr
           pwd
-          npm ci
+          npm i
           npm run build
           cd ../twittr
       - uses: actions/upload-artifact@v3.0.0
