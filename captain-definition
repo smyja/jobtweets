@@ -4,7 +4,7 @@
                           "FROM python:3.9",
                           "USER root",
                           "RUN mkdir -p /var/www/html/dist/",
-                          "COPY build/ /var/www/html/dist/",
+                          "COPY backend/ /var/www/html/dist/",
                           "RUN chown -R nobody.nobody /var/www/html",
                           "ENV NODE_ENV production",
                           "USER nobody",
