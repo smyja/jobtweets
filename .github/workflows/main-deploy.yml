@@ -23,6 +23,7 @@ jobs:
 
       - run: |
           cd twittr
+          pwd
           npm ci
           npm run build
           cd ../twittr
