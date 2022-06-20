@@ -163,7 +163,7 @@ const Home = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-        setError(err.message || error);
+        setError(error.message || error);
       });
   }
 
