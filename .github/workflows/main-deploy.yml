@@ -41,19 +41,14 @@ jobs:
         uses: premoweb/deploy-to-caprover@main
 
       # Runs a single command using the runners shell
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
 
-      - name: Install Dependencies
-        run: |
-          cd backend
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+
         with:
           server: '${{ secrets.CAPROVER_SERVER }}'
           app: '${{ secrets.APP_NAME }}'
           token: '${{ secrets.APP_TOKEN }}'
           branch: 'main'
           script: |
+            cd backend
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
