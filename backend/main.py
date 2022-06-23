@@ -23,11 +23,11 @@ import re
 load_dotenv()
 
 origins = [
-    "https://twittrng.herokuapp.com",
-    "http://twittrng.herokuapp.com",
+    "https://jobtweets.xyz",
+    "http://jobtweets.xyz",
     "http://localhost:8000",
 ]
-api_app = FastAPI(title="my existing api")
+api_app = FastAPI(title="Job tweets api Doc")
 
 
 app = FastAPI(title="my app root")
