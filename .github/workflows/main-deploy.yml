@@ -36,6 +36,8 @@ jobs:
           ls -a
           npm install
           npm run build
+          cd ../backend
+          
 
 
 
