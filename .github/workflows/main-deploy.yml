@@ -31,7 +31,9 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script: |
           pwd
-          cd twittr
+          cd ..
+          pwd
+          ls -a
           npm install
           npm run build
 
