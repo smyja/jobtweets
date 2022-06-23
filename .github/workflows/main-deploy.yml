@@ -30,7 +30,7 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
-          echo pwd
+          pwd
           cd twittr
           npm install
           npm run build
