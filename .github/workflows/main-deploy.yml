@@ -30,7 +30,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         run: |
           ls -a
-          cd ../var/www/jobtweets/build
+          cd ../var/www/jobtweets.xyz/build
           pwd
           ls -a
           npm install
