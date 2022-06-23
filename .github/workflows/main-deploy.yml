@@ -30,7 +30,7 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && chown -R root:root . && cd ../var/www/jobtweets.xyz/twittr && npm install && npm run build
+        script: export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && chown -R root:root . && sudo unlink /usr/bin/node && sudo ln -s /root/.nvm/versions/node/v16.2.0/bin/node /usr/bin/node && cd ../var/www/jobtweets.xyz/twittr && npm install && npm run build
 
 
           
