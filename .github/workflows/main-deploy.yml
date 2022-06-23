@@ -22,7 +22,9 @@ jobs:
         target: "/var/www/jobtweets.xyz"
     - name: install Dependencies
       run: |
-        cd /var/www/jobtweets.xyz/twittr
+        pwd
+        
+        cd ../var/www/jobtweets.xyz/twittr
         pwd
         ls -a
         npm install
