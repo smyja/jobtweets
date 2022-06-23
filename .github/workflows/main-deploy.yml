@@ -17,6 +17,9 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
+      with:
+        source: "."
+        target: "/var/www/jobtweets.xyz"
     - name: install Dependencies
       run: |
         cd /var/www/jobtweets.xyz/twittr
@@ -25,10 +28,6 @@ jobs:
         npm install
         npm run build
         cd ../backend
-      with:
-        source: "."
-        target: "/var/www/jobtweets.xyz"
-
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
@@ -37,8 +36,6 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
-          pwd
-          cd /var/www/jobtweets.xyz/twittr
           pwd
           ls -a
 
