@@ -37,6 +37,10 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
+          pwd
+          cd /var/www/jobtweets.xyz/twittr
+          pwd
+          ls -a
 
           
 
