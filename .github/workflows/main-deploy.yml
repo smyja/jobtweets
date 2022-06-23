@@ -24,12 +24,12 @@ jobs:
       run: |
         pwd
         
-        cd ../var/www/jobtweets.xyz/twittr
+        cd ..
         pwd
         ls -a
-        npm install
-        npm run build
-        cd ../backend
+        # npm install
+        # npm run build
+        # cd ../backend
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
