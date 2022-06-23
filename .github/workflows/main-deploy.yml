@@ -20,6 +20,8 @@ jobs:
       with:
         source: "."
         target: "/var/www/jobtweets.xyz"
+    - name: Node Js
+      uses: actions/setup-node@v1
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
