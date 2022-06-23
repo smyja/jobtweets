@@ -30,7 +30,7 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: cd ../var/www/jobtweets.xyz/twittr && npm install && npm run build
+        script: export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd ../var/www/jobtweets.xyz/twittr && npm install && npm run build
 
 
           
