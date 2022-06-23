@@ -20,16 +20,7 @@ jobs:
       with:
         source: "."
         target: "/var/www/jobtweets.xyz"
-    - name: install Dependencies
-      run: |
-        pwd
-        
-        cd ..
-        pwd
-        ls -a
-        # npm install
-        # npm run build
-        # cd ../backend
+
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
@@ -37,9 +28,14 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: |
+        run: |
+          ls -a
+          cd ../var/www/jobtweets/build
           pwd
           ls -a
+          npm install
+          npm run build
+
 
           
 
