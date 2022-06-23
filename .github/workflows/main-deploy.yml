@@ -31,7 +31,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script: |
           pwd
-          cd ..
+          cd /var/www/jobtweets.xyz/twittr
           pwd
           ls -a
           npm install
