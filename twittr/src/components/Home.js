@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   createStyles,
   Text,
@@ -15,6 +14,7 @@ import {
 } from "@mantine/core";
 import { Icon } from "@iconify/react";
 import { api } from "../helpers/api";
+import { FooterCentered } from "./Footer";
 
 const useStyles = createStyles((theme) => ({
   boxPosition: {
@@ -132,7 +132,6 @@ const Home = () => {
   const [jobs, setJobs] = React.useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const history = useNavigate();
   const selectForm = useRef(null);
   function handleSubmit(e) {
     if (e.keyCode === 13) {
@@ -349,6 +348,7 @@ const Home = () => {
         </div>
       ))}
       <Space h="md" />
+      <FooterCentered />
     </div>
   );
 };
