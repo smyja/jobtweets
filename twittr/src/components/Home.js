@@ -112,7 +112,7 @@ const useStyles = createStyles((theme) => ({
   buttonMobile: {
     "@media (max-width: 800px)": {
  
-      marginLeft: "230px",
+      marginLeft: "213px",
       marginRight: "1px",
 
     },
@@ -286,7 +286,7 @@ const Home = () => {
                 color="#1E6386"
                 style={{
                   fontFamily: "BR-Firma-Medium",
-                  width: "593px",
+                  width: "90%",
                   position: "relative",
                   left: "20px",
                   top: "20px",
