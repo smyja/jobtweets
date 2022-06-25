@@ -21,6 +21,7 @@ load_dotenv()
 origins = [
     "https://jobtweets.xyz",
     "http://jobtweets.xyz",
+    "https://www.jobtweets.xyz"
     "http://localhost:8000",
 ]
 api_app = FastAPI(title="Job tweets api Doc")

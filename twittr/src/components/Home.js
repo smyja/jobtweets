@@ -23,7 +23,7 @@ const useStyles = createStyles((theme) => ({
       fontFamily: "BR-Firma-Medium",
       fontSize: "60px",
       width: "503px",
-      marginLeft: "64px",
+      marginLeft: "25px",
       height: "97px",
       lineHeight: "50px",
       marginTop: "70px",
@@ -58,7 +58,7 @@ const useStyles = createStyles((theme) => ({
       fontFamily: "BR-Firma-Elight",
       fontSize: "15px",
       width: "358px",
-      marginLeft: "64px",
+      marginLeft: "25px",
       height: "59px",
       lineHeight: "18px",
       marginTop: "10px",
@@ -83,7 +83,7 @@ const useStyles = createStyles((theme) => ({
   selectMobile: {
     "@media (max-width: 800px)": {
       width: "523px",
-      marginLeft: "64px",
+      marginLeft: "25px",
       marginTop: "10px",
     },
   },
@@ -103,7 +103,7 @@ const useStyles = createStyles((theme) => ({
   },
   cardMobile: {
     "@media (max-width: 800px)": {
-      width: "600px",
+      width: "459px",
       marginLeft: "17px",
       marginRight: "1px",
       marginTop: "40px",
@@ -129,9 +129,10 @@ const useStyles = createStyles((theme) => ({
 const Home = () => {
   const { classes, cx } = useStyles();
   const [joblist, setJoblist] = React.useState("");
+  const [jobs, setJobs] = React.useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const history = useNavigate();
   const selectForm = useRef(null);
   function handleSubmit(e) {
     if (e.keyCode === 13) {
@@ -140,7 +141,7 @@ const Home = () => {
       return;
     }
 
-    // console.log(jobs);
+    console.log(jobs);
     setLoading(true);
     const uu = {
       jobs: joblist,
@@ -160,10 +161,10 @@ const Home = () => {
         setLoading(false);
         setJoblist(data.data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
         setLoading(false);
-        setError(error.message || error);
+        setError(err.message || err);
       });
   }
 
@@ -184,6 +185,9 @@ const Home = () => {
       </Text>
       <form ref={selectForm}>
         <Select
+         //reduce input width 80%
+          style={{ width: "80%" }}
+          
           label="Your favorite framework/library"
           placeholder="Pick one and Press Enter"
           searchable
@@ -245,7 +249,7 @@ const Home = () => {
            color="#1E6386"
            style={{
              fontFamily: "BR-Firma-Medium",
-             width: "593px",
+             width: "130%",
              pgosition: "relative",
              left: "20px",
              top: "20px",
@@ -293,7 +297,7 @@ const Home = () => {
             </Card.Section>
             <Space h="lg" />
             <Space h="lg" />
-            <Group spacing="sm" noWrap>
+            <Group spacing="0" noWrap>
               <div style={{ width: 200 }}>
                 <Badge
                   variant="gradient"
