@@ -185,9 +185,7 @@ const Home = () => {
       </Text>
       <form ref={selectForm}>
         <Select
-         //reduce input width 80%
           style={{ width: "80%" }}
-          
           label="Your favorite framework/library"
           placeholder="Pick one and Press Enter"
           searchable
@@ -210,6 +208,7 @@ const Home = () => {
 
           ]}
           className={cx(classes.selectMobile, classes.selectDesk)}
+
         />
       </form>
 
@@ -286,7 +285,7 @@ const Home = () => {
                 color="#1E6386"
                 style={{
                   fontFamily: "BR-Firma-Medium",
-                  width: "90%",
+                  width: "95%",
                   position: "relative",
                   left: "20px",
                   top: "20px",

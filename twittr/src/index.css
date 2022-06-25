@@ -52,3 +52,12 @@ body {
     /* other formats include: 'woff2', 'truetype, 'opentype',
                   'embedded-opentype', and 'svg' */
 }
+
+
+
+/* media query min 800px */
+@media screen and (min-width: 800px) {
+    .mantine-Select-defaultVariant  {
+        width: 80%;
+    }
+}
