@@ -37,12 +37,11 @@ export function FooterCentered({ links }: FooterCenteredProps) {
   const { classes } = useStyles();
   const linkos = footerLinks[0].props.links;
   const items = linkos.map((link) => (
-    <Anchor<'a'>
+    <Anchor
       color="dimmed"
       key={link.label}
       href={link.link}
       sx={{ lineHeight: 1 }}
-      onClick={(event) => event.preventDefault()}
       size="sm"
     >
       {link.label}
