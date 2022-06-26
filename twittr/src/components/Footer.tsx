@@ -43,6 +43,7 @@ export function FooterCentered({ links }: FooterCenteredProps) {
       href={link.link}
       sx={{ lineHeight: 1 }}
       size="sm"
+      target="_blank"
     >
       {link.label}
     </Anchor>
