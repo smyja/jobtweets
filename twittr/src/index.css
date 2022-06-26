@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow-x: hidden;
     font-family: "BR-Firma-Light";
     background-color: #fafafa;
 }
