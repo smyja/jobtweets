@@ -12,8 +12,6 @@ const footerLinks = [{
   "props": {
     "links": [
       { "link": "https://github.com/smyja/jobtweets", "label": "Github" },
-      { "link": "https://hashnode.com/", "label": "Hashnode" },
-      { "link": "https://linode.com/", "label": "Deployed on Linode" },
 
     ]
   },
