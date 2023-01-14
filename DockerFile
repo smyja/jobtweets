@@ -1,6 +1,6 @@
 FROM node:16.19.0-buster-slim
-RUN apt-get update && apt-get install -y \
-RUN mkdir -p /usr/src/app
+RUN apt-get update
+RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 COPY ./twittr ./twittr
 
