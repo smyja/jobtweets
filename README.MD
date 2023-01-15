@@ -7,5 +7,3 @@ Demo: https://jobtweets.xyz/
 
 ## Getting Started
 
-
-
