@@ -16,8 +16,7 @@ jobs:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        passphrase:  ${{ secrets.PASSPHRASE }}
+        password: ${{ secrets.PASSWORD }}
       with:
         source: "."
         target: "/var/www/jobtweets.xyz"
@@ -32,7 +31,7 @@ jobs:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        password: ${{ secrets.PASSWORD }}
         script: export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd ../var/www/jobtweets.xyz/twittr && chown -R root:root . && rm -rf node_modules && rm -rf package-lock.json && npm i && npm run build
 
 
