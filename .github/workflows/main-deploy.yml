@@ -35,7 +35,7 @@ jobs:
         script: export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd ../var/www/jobtweets.xyz/twittr && chown -R root:root . && rm -rf node_modules && rm -rf package-lock.json && npm i && npm run build
 
 
-          
+         
 
 
 
