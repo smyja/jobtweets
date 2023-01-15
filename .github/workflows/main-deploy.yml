@@ -16,7 +16,7 @@ jobs:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
-        password: ${{ secrets.PASSWORD }}
+        PASSWORD: ${{ secrets.PASSWORD }}
       with:
         source: "."
         target: "/var/www/jobtweets.xyz"
