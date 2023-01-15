@@ -6,4 +6,3 @@ Demo: https://jobtweets.xyz/
 ![Desktop - 1j](https://user-images.githubusercontent.com/20070770/160129666-39808d9f-7ec2-4944-a000-f6e146eb60fc.png)
 
 ## Getting Started
-T
