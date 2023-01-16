@@ -91,16 +91,23 @@ async def get_jobs(request: Request, joblist: JobList):
         a = arrow.get(i)
         
         new_date.append(a.humanize())
-  
+    tweets_data=[]
     id=list(range(1,len(cleaned_tweets)+1))
     d={"id":id,"tweets":cleaned_tweets,"date":new_date,"urls":results}
-    recordset = [{k: v[i] for k, v in d.items() if i < len(v)} for i in range(max([len(l) for l in d.values()]))]
+    for i in range(len(cleaned_tweets)):
+        tweets_dict={
+            "id": id[i],
+            "tweets": cleaned_tweets[i],
+            "date": new_date[i],
+            "urls": results[i]
+        }
+        tweets_data.append(tweets_dict)
 
 
     return JSONResponse(
         {"success":True,
         "data":{
-       "joblist":recordset,
+       "joblist":tweets_data
     },
         "message":"successfully fetched"}, status.HTTP_200_OK
     )
