@@ -180,7 +180,7 @@ const Home = () => {
         />
       </Text>
       <Text className={cx(classes.loremMobile, classes.loremDesk)}>
-          Easier access to Developer Jobs on Twitter for everyone.
+          Search Engine for Developer Jobs on Twitter
       </Text>
       <form ref={selectForm}>
         <Select
@@ -204,7 +204,18 @@ const Home = () => {
             { value: "Haskell Hiring", label: "Haskell" },
             { value: "Django Hiring", label: "Django" },
             { value: "PHP Hiring", label: "PHP" },
-
+            { value: "Ruby Hiring", label: "Ruby" },
+            { value: "Java Hiring", label: "Java" },
+            { value: "C++ Hiring", label: "C++" },
+            { value: "C# Hiring", label: "C#" },
+            { value: "C Hiring", label: "C" },
+            { value: "Rust Hiring", label: "Rust" },
+            { value: "Flutter Hiring", label: "Flutter" },
+            { value: "Kotlin Hiring", label: "Kotlin" },
+            { value: "Android Hiring", label: "Android" },
+            { value: "IOS Hiring", label: "IOS" },
+            { value: "React Native Hiring", label: "React Native" },
+            { value: "Intern Software Engineer", label: "Intern(Beta)" },                         
           ]}
           className={cx(classes.selectMobile, classes.selectDesk)}
 
