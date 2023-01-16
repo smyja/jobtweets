@@ -11,7 +11,7 @@ const footerLinks = [{
   ],
   "props": {
     "links": [
-      { "link": "https://github.com/smyja/jobtweets", "label": "Github" },
+      { "link": "https://jobtweets.xyz", "label": "Jobtweets" },
 
     ]
   },
