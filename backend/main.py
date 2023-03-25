@@ -14,6 +14,7 @@ from storage.models import *
 from dotenv import load_dotenv
 import preprocessor
 import tweepy
+import hashlib
 import arrow
 import re
 load_dotenv()
@@ -65,18 +66,22 @@ async def get_jobs(request: Request, joblist: JobList):
         date.append(tweet.data["created_at"])
 
     results = [] #links
-    processed = [] #jobs
+    processed = set() # use a set to store tweet hashes instead of a list
     created=[]
 
     #Checks for duplicates and spam
-    for url,tweets,dates in zip(urls, tweets,date):
-        if tweets not in processed and not any(spam in tweets for spam in spam_list):
-                
-                #Checks for links
-                if re.search("(?P<url>https?://[^\s]+)", tweets): 
-                    processed.append(tweets)
-                    results.append(url)
-                    created.append(dates)
+    for url, tweet, date in zip(urls, tweets, date):
+        # generate a hash of the tweet content (text + URL)
+        tweet_hash = hashlib.sha256((tweet + url).encode('utf-8')).hexdigest()
+        
+        if tweet_hash not in processed and not any(spam in tweet for spam in spam_list):
+            # add the tweet hash to the set of processed hashes
+            processed.add(tweet_hash)
+            
+            # add the tweet details to the results
+            results.append(url)
+            tweets.append(tweet)
+            date.append(date)
 
     cleaned_tweets=[]
     for text in processed:
