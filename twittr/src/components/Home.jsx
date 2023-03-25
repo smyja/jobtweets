@@ -215,7 +215,9 @@ const Home = () => {
             { value: "Android Hiring", label: "Android" },
             { value: "IOS Hiring", label: "IOS" },
             { value: "React Native Hiring", label: "React Native" },
-            { value: "Intern Software Engineer", label: "Intern(Beta)" },                         
+            { value: "Intern Software Engineer", label: "Intern(Beta)" },    
+            { value: "GPT Hiring", label: "GPT" },
+            { value: "AI Hiring", label: "AI" },                     
           ]}
           className={cx(classes.selectMobile, classes.selectDesk)}
 
